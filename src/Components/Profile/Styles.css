@@ -1,0 +1,9 @@
+.results.visible{
+   margin: 0 auto;
+   position: inherit;
+}
+
+.ui.search > .results.visible {
+  position: relative;
+  margin: 5 auto;
+}

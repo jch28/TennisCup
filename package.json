@@ -3,9 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "elo-js": "^1.0.1",
+    "firebase": "^5.9.2",
+    "lodash": "^4.17.11",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-window-size": "^1.2.2",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.86.0"
   },
   "scripts": {
     "start": "react-scripts start",
