@@ -24,6 +24,8 @@ class App extends Component {
 
   componentWillMount(){
 
+    document.title = 'Horwood Cup'
+
     var config = {
       apiKey: "AIzaSyAMkJD64hjCNSXKL-kie2f8_81YawT3ST0",
       authDomain: "horwoodcup.firebaseapp.com",
