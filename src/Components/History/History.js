@@ -31,7 +31,7 @@ class History extends Component {
           </Table.Header>
           <Table.Body>
 
-              {this.props.history.map((l) => (
+              {this.props.history.slice(0, 25).map((l) => (
                 <Table.Row>
                   <Table.Cell>{l.match}</Table.Cell>
                   <Table.Cell>{l.won} {" ( "}
