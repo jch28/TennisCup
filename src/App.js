@@ -41,6 +41,7 @@ class App extends Component {
 
   async componentDidMount(){
 
+    document.body.style.background = "#FFF";
     const db = firebase.firestore();
     var users = [];
     var dates = [];
@@ -58,7 +59,7 @@ class App extends Component {
     });
 
     users.sort((a, b) => (a.elo) - (b.elo)).reverse();
-    dates.reverse()
+    dates.sort((a, b) => (a.key) - (b.key)).reverse();
 
     this.setState({
       list: users,
@@ -88,7 +89,8 @@ class App extends Component {
         "lost": playerTwo,
         "gain": diffOne,
         "loss": diffTwo,
-        "date": new Date().toJSON().slice(0,10).replace(/-/g,'/')
+        "key": this.state.history.length,
+        "date": new Date().toLocaleDateString()
     })
     this.componentDidMount();
   }
@@ -99,7 +101,9 @@ class App extends Component {
 
         <HeaderBar currentTab = {this.state.currentTab} handleItemClick = {this.handleItemClick} />
 
-        <div style = {{paddingTop: this.props.windowHeight * 0.05}}>
+        <div style = {{
+          paddingTop: this.props.windowHeight * 0.05,
+          }}>
 
         {this.state.currentTab === 1 ?
           <div>
