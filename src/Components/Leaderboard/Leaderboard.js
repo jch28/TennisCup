@@ -1,8 +1,31 @@
 import React, { Component } from 'react';
-import { Menu, Segment, Grid, Header, Icon, Divider, Search, Button, Dropdown, Table, Dimmer, Loader } from 'semantic-ui-react'
+import { Menu, Segment, Grid, Header, Icon, Divider, Search, Button, Dropdown, Dimmer, Loader } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 import windowSize from 'react-window-size';
 import firebase from 'firebase';
+import Paper from '@material-ui/core/Paper';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { withStyles } from '@material-ui/core/styles';
+
+const CustomTableCell = withStyles(theme => ({
+  head: {
+    fontSize: 14,
+    fontWeight: "bold",
+    backgroundColor: "#fbfbfb",
+  },
+  body: {
+    fontSize: 14,
+  },
+  row: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.background.default,
+    },
+  },
+}))(TableCell);
 
 class Leaderboard extends Component {
 
@@ -26,37 +49,39 @@ class Leaderboard extends Component {
         }
         {this.props.list.length > 0 &&
         <div>
-        <Table celled fixed singleLine>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>Rank</Table.HeaderCell>
-              <Table.HeaderCell>Name</Table.HeaderCell>
-              <Table.HeaderCell>Elo</Table.HeaderCell>
-              <Table.HeaderCell>Won</Table.HeaderCell>
-              <Table.HeaderCell>Lost</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
+        <Paper>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <CustomTableCell>Rank</CustomTableCell>
+              <CustomTableCell>Name</CustomTableCell>
+              <CustomTableCell>Elo</CustomTableCell>
+              <CustomTableCell>Won</CustomTableCell>
+              <CustomTableCell>Lost</CustomTableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
 
           {this.props.list.map((l, index) => (
-            <Table.Row>
+            <TableRow>
               {index === 0 ?
-                <Table.Cell>{index + 1}
+                <CustomTableCell>{index + 1}
                 <span>&nbsp;&nbsp;</span>
                 <Icon name='chess king' />
-                </Table.Cell>
-                : <Table.Cell>{index + 1}
-                </Table.Cell>
+                </CustomTableCell>
+                : <CustomTableCell>{index + 1}
+                </CustomTableCell>
               }
-              <Table.Cell>{l.key}</Table.Cell>
-              <Table.Cell>{l.elo}</Table.Cell>
-              <Table.Cell>{l.wins}</Table.Cell>
-              <Table.Cell>{l.losses}</Table.Cell>
-            </Table.Row>
+              <CustomTableCell>{l.key}</CustomTableCell>
+              <CustomTableCell>{l.elo}</CustomTableCell>
+              <CustomTableCell>{l.wins}</CustomTableCell>
+              <CustomTableCell>{l.losses}</CustomTableCell>
+            </TableRow>
               ))}
 
-          </Table.Body>
+          </TableBody>
         </Table>
+        </Paper>
         </div>
       }
       </div>

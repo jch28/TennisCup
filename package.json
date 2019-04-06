@@ -8,6 +8,7 @@
     "firebase": "^5.9.2",
     "lodash": "^4.17.11",
     "react": "^16.8.5",
+    "react-device-detect": "^1.6.2",
     "react-dom": "^16.8.5",
     "react-scripts": "2.1.8",
     "react-window-size": "^1.2.2",

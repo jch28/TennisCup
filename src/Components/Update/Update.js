@@ -3,6 +3,12 @@ import { Menu, Segment, Grid, Header, Icon, Divider, Search, Button, Dropdown, C
 import 'semantic-ui-css/semantic.min.css';
 import windowSize from 'react-window-size';
 import firebase from 'firebase';
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile
+} from "react-device-detect";
 
 class Update extends Component {
 
@@ -83,7 +89,7 @@ class Update extends Component {
       }}>
       <Segment placeholder>
       <Grid columns={2} stackable textAlign='center'>
-        <Divider vertical>VS</Divider>
+        <BrowserView><Divider vertical>VS</Divider></BrowserView>
         <Grid.Row verticalAlign='middle'>
           <Grid.Column>
             <Header icon>
