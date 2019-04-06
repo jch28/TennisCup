@@ -1,3 +1,3 @@
-Simple WebApp with ReactJS Front-End with Firebase NoSQL Database Back-End
+Simple WebApp with ReactJS Front-End with Firebase Cloud Database Back-End (NoSQL)
 
 https://horwood.netlify.com/
