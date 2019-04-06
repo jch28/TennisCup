@@ -20,7 +20,7 @@ class History extends Component {
         paddingRight: this.props.windowWidth * 0.2,
       }}>
 
-        <Table celled fixed singleLine>
+        <Table celled fixed singleLine striped>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell>Match</Table.HeaderCell>

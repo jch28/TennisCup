@@ -26,7 +26,7 @@ class Leaderboard extends Component {
         }
         {this.props.list.length > 0 &&
         <div>
-        <Table celled fixed singleLine>
+        <Table celled fixed singleLine striped>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell>Rank</Table.HeaderCell>
