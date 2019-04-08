@@ -14,7 +14,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-        currentTab: 2,
+        currentTab: 1,
         list:[],
         history:[]
     }
