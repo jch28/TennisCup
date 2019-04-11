@@ -134,7 +134,10 @@ class Update extends Component {
 
       {!isMobile ?
 
-      <div>
+      <div style = {{
+        paddingLeft: this.props.windowWidth * 0.25,
+        paddingRight: this.props.windowWidth * 0.25,
+      }}>
       <Accordion styled>
         <Accordion.Title active={this.state.accordion} onClick={this.openAccordion}>
           <Icon name='dropdown' />
@@ -165,10 +168,7 @@ class Update extends Component {
       </Accordion>
       </div> :
 
-      <div style = {{
-        paddingLeft: this.props.windowWidth * 0.25,
-        paddingRight: this.props.windowWidth * 0.25,
-      }}>
+      <div>
       <Accordion styled>
         <Accordion.Title active={this.state.accordion} onClick={this.openAccordion}>
           <Icon name='dropdown' />
