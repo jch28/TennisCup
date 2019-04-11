@@ -131,11 +131,13 @@ class Update extends Component {
         paddingLeft: this.props.windowWidth * 0.1,
         paddingRight: this.props.windowWidth * 0.1,
       }}>
+
+      {!isMobile ?
+
       <div style = {{
         paddingLeft: this.props.windowWidth * 0.25,
         paddingRight: this.props.windowWidth * 0.25,
       }}>
-
       <Accordion styled>
         <Accordion.Title active={this.state.accordion} onClick={this.openAccordion}>
           <Icon name='dropdown' />
@@ -164,8 +166,42 @@ class Update extends Component {
          <div style = {{paddingTop: this.props.windowHeight * 0.025}}><Input onChange={this.handleMessage} label='Score' placeholder='Enter Score..' /></div>
         </Accordion.Content>
       </Accordion>
+      </div> :
 
-      </div>
+      <div style = {{
+        paddingLeft: this.props.windowWidth * 0.25,
+        paddingRight: this.props.windowWidth * 0.25,
+      }}>
+      <Accordion styled>
+        <Accordion.Title active={this.state.accordion} onClick={this.openAccordion}>
+          <Icon name='dropdown' />
+          Format
+        </Accordion.Title>
+        <Accordion.Content active={this.state.accordion}>
+
+        {isMobile ?
+          <div>
+          <Button.Group basic vertical>
+            <Button active={this.state.active === 1} onClick={(value) => this.handleClick(1)}>BO1</Button>
+            <Button active={this.state.active === 2} onClick={(value) => this.handleClick(2)}>BO3</Button>
+            <Button active={this.state.active === 3} onClick={(value) => this.handleClick(3)}>BO5</Button>
+            <Button toggle active={this.state.bonus} onClick={(value) => this.bonus()} icon='star'/>
+          </Button.Group>
+          </div> :
+          <div>
+          <Button.Group basic>
+            <Button active={this.state.active === 1} onClick={(value) => this.handleClick(1)}>BO1</Button>
+            <Button active={this.state.active === 2} onClick={(value) => this.handleClick(2)}>BO3</Button>
+            <Button active={this.state.active === 3} onClick={(value) => this.handleClick(3)}>BO5</Button>
+            <Button toggle active={this.state.bonus} onClick={(value) => this.bonus()} icon='star'/>
+          </Button.Group>
+          </div>
+        }
+         <div style = {{paddingTop: this.props.windowHeight * 0.025}}><Input onChange={this.handleMessage} label='Score' placeholder='Enter Score..' /></div>
+        </Accordion.Content>
+      </Accordion>
+      </div> }
+
       <Segment placeholder>
       <Grid columns={2} stackable textAlign='center'>
         <BrowserView><Divider vertical>VS</Divider></BrowserView>
