@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Segment, Grid, Header, Icon, Divider, Search, Button, Dropdown, Confirm, Table, Accordion } from 'semantic-ui-react'
+import { Menu, Segment, Grid, Header, Icon, Divider, Search, Button, Dropdown, Confirm, Table, Accordion, Input } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 import windowSize from 'react-window-size';
 import firebase from 'firebase';
@@ -21,6 +21,7 @@ class Update extends Component {
       active : 1,
       bonus: false,
       accordion: false,
+      comment: "N/A",
     }
     this.openDialog = this.openDialog.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
@@ -30,6 +31,7 @@ class Update extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.bonus = this.bonus.bind(this);
     this.openAccordion = this.openAccordion.bind(this);
+    this.handleMessage = this.handleMessage.bind(this);
   }
 
   openAccordion(){
@@ -49,6 +51,12 @@ class Update extends Component {
   handleClick(variable){
     this.setState({
       active: variable
+    })
+  }
+
+  handleMessage(e){
+    this.setState({
+      message: e.target.value
     })
   }
 
@@ -96,7 +104,7 @@ class Update extends Component {
     tempOne = finalDiff + one
     tempTwo = two - finalDiff
 
-    this.props.updateData(this.state.first, tempOne, this.state.second, tempTwo, finalDiff, finalDiff)
+    this.props.updateData(this.state.first, tempOne, this.state.second, tempTwo, finalDiff, finalDiff, this.state.message)
 
     this.setState({
       confirm: false,
@@ -153,7 +161,7 @@ class Update extends Component {
           </Button.Group>
           </div>
         }
-
+         <div style = {{paddingTop: this.props.windowHeight * 0.025}}><Input onChange={this.handleMessage} label='Score' placeholder='Enter Score..' /></div>
         </Accordion.Content>
       </Accordion>
 

@@ -27,6 +27,7 @@ class History extends Component {
               <Table.HeaderCell>Won</Table.HeaderCell>
               <Table.HeaderCell>Lost</Table.HeaderCell>
               <Table.HeaderCell>Date</Table.HeaderCell>
+              <Table.HeaderCell>Score</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>
@@ -41,6 +42,7 @@ class History extends Component {
                   <div class="ui red" style={{display: "inline-block"}}>{"-" + l.loss}</div>
                   {" )"}</Table.Cell>
                   <Table.Cell>{l.date}</Table.Cell>
+                  <Table.Cell>{l.score}</Table.Cell>
                 </Table.Row>
                   ))}
 
