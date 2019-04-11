@@ -144,16 +144,6 @@ class Update extends Component {
           Format
         </Accordion.Title>
         <Accordion.Content active={this.state.accordion}>
-
-        {isMobile ?
-          <div>
-          <Button.Group basic vertical>
-            <Button active={this.state.active === 1} onClick={(value) => this.handleClick(1)}>BO1</Button>
-            <Button active={this.state.active === 2} onClick={(value) => this.handleClick(2)}>BO3</Button>
-            <Button active={this.state.active === 3} onClick={(value) => this.handleClick(3)}>BO5</Button>
-            <Button toggle active={this.state.bonus} onClick={(value) => this.bonus()} icon='star'/>
-          </Button.Group>
-          </div> :
           <div>
           <Button.Group basic>
             <Button active={this.state.active === 1} onClick={(value) => this.handleClick(1)}>BO1</Button>
@@ -162,7 +152,6 @@ class Update extends Component {
             <Button toggle active={this.state.bonus} onClick={(value) => this.bonus()} icon='star'/>
           </Button.Group>
           </div>
-        }
          <div style = {{paddingTop: this.props.windowHeight * 0.025}}><Input onChange={this.handleMessage} label='Score' placeholder='Enter Score..' /></div>
         </Accordion.Content>
       </Accordion>
