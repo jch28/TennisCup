@@ -73,7 +73,7 @@ class App extends Component {
     });
   }
 
-  async updateData(playerOne, oneElo, playerTwo, twoElo, diffOne, diffTwo){
+  async updateData(playerOne, oneElo, playerTwo, twoElo, diffOne, diffTwo, message){
     const db = firebase.firestore();
     await db.collection("users").doc(playerOne).update({
         "elo": oneElo,
@@ -90,7 +90,8 @@ class App extends Component {
         "gain": diffOne,
         "loss": diffTwo,
         "key": this.state.history.length,
-        "date": new Date().toLocaleDateString()
+        "date": new Date().toLocaleDateString(),
+        "score": message
     })
     this.componentDidMount();
   }
