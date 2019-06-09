@@ -104,6 +104,7 @@ class App extends Component {
 
         <div style = {{
           paddingTop: this.props.windowHeight * 0.05,
+          paddingBottom: this.props.windowHeight * 0.05,
           }}>
 
         {this.state.currentTab === 1 ?
