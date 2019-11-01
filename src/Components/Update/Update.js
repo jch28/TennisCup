@@ -21,7 +21,7 @@ class Update extends Component {
       active : 1,
       bonus: false,
       accordion: false,
-      comment: "N/A",
+      message: "N/A",
     }
     this.openDialog = this.openDialog.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
