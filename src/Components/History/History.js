@@ -4,7 +4,7 @@ import 'semantic-ui-css/semantic.min.css';
 import './Styles.css';
 import windowSize from 'react-window-size';
 
-const index = 15;
+const index = 1;
 
 class History extends Component {
 
