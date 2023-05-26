@@ -77,7 +77,7 @@ class Update extends Component {
     var mult = 1;
     mult += this.state.active * 0.75
     if (this.state.bonus){
-      mult += 0.25
+      mult += 0.5
     }
 
     var Elo = require( 'elo-js' );
