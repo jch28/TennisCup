@@ -75,7 +75,7 @@ class Update extends Component {
   handleConfirm(){
 
     var mult = 1;
-    mult += this.state.active * 0.25
+    mult += this.state.active
     if (this.state.bonus){
       mult += 0.25
     }
@@ -101,7 +101,7 @@ class Update extends Component {
     var diff = tempOne - one
     var finalDiff = Math.round(diff * mult);
 
-    tempOne = finalDiff + one
+    tempOne = Math.min(finalDiff, 15) + one
     tempTwo = two - finalDiff
 
     this.props.updateData(this.state.first, tempOne, this.state.second, tempTwo, finalDiff, finalDiff, this.state.message)
