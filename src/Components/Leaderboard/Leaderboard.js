@@ -34,6 +34,7 @@ class Leaderboard extends Component {
               <Table.HeaderCell>Elo</Table.HeaderCell>
               <Table.HeaderCell>Won</Table.HeaderCell>
               <Table.HeaderCell>Lost</Table.HeaderCell>
+              <Table.HeaderCell>Win Rate</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>
@@ -52,6 +53,7 @@ class Leaderboard extends Component {
               <Table.Cell>{l.elo}</Table.Cell>
               <Table.Cell>{l.wins}</Table.Cell>
               <Table.Cell>{l.losses}</Table.Cell>
+              <Table.Cell>{l.losses == 0 && l.wins == 0 ? '0%' : (l.wins / (l.losses + l.wins)).toFixed(2)*100 + '%'}</Table.Cell>
             </Table.Row>
               ))}
 
