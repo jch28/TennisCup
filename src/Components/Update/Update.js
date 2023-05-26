@@ -101,7 +101,7 @@ class Update extends Component {
     var diff = tempOne - one
     var finalDiff = Math.round(diff * mult);
 
-    tempOne = Math.min(finalDiff, 15) + one
+    tempOne = Math.max(finalDiff, 15) + one
     tempTwo = two - finalDiff
 
     this.props.updateData(this.state.first, tempOne, this.state.second, tempTwo, finalDiff, finalDiff, this.state.message)
