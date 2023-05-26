@@ -75,7 +75,7 @@ class Update extends Component {
   handleConfirm(){
 
     var mult = 1;
-    mult += this.state.active
+    mult += this.state.active * 0.75
     if (this.state.bonus){
       mult += 0.25
     }
